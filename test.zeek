@@ -31,7 +31,6 @@ event zeek_init()
                             local ratio2 : double = result["count of uni 404 resp"]$unique / result["count of 404 resp"]$sum;
                             if (result["count of 404 resp"]$sum > 2 && ratio1 > 0.2 && ratio2 > 0.5) {
                                 print fmt("%s is a scanner with %.0f scan attemps on %.0f urls", key$host, result["count of 404 resp"]$sum, result["count of uni 404 resp"]$sum);
-                            }
                         }
-		     ]);
-    }
+                    }]);
+}
